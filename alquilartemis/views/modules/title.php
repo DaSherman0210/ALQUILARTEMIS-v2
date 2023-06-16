@@ -9,4 +9,5 @@
         echo strtoupper($getArray[4]);
     }
 } ?>
+
 </title>

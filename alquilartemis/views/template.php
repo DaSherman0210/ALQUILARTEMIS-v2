@@ -63,7 +63,7 @@ $getArray = array_filter($getArray);
   
     <?php include "views/modules/sidebar.php"; ?>
 
-  <!-- Content Wrapper. Contains page content -->
+  <!--  Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">

@@ -6,7 +6,7 @@ class Clientes extends Conectar{
     private $ubicacion;
     private $telefono;
     private $email;
-
+ 
     public function __construct($id_cliente=0, $nombre='', $ubicacion='', $telefono='', $email=''){
         $this->id_cliente = $id_cliente;
         $this->nombre = $nombre;

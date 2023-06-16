@@ -9,7 +9,7 @@ $body = json_decode(file_get_contents("php://input"), true);
 
 switch ($_GET['op']) {
     case 'GetAll':
-        $datos = $cliente -> get_cliente();
+        $datos = $cliente -> get_cliente(); 
         echo json_encode($datos);
         break;
     case 'GetId':

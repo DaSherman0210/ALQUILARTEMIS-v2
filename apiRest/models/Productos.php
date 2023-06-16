@@ -17,7 +17,7 @@ class Productos extends Conectar{
         $this-> fecha_inventario = $fecha_inventario;
         $this-> tipo_operacion = $tipo_operacion;
     }
-
+ 
     //todo -- SETTERS
     public function setId_producto($id_producto){
         $this -> id_producto = $id_producto;

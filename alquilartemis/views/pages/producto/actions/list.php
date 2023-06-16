@@ -30,7 +30,7 @@ echo "</pre>"; */
           <th>ACTUALIZAR</th>
           <th>BORRAR</th>
         </tr>
-        </thead>
+        </thead> 
         <tbody>
           <?php 
             foreach($output as $out)

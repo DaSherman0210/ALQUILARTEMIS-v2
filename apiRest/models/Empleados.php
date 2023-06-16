@@ -5,7 +5,7 @@ class Empleados extends Conectar{
     private $direccion;
     private $telefono;
     private $email;
-
+ 
     public function __construct($id_empleado=0, $nombres='', $direccion='', $telefono='', $email=''){
         $this->id_empleado = $id_empleado;
         $this->nombres = $nombres;

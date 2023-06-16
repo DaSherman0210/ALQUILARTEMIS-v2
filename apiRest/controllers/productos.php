@@ -12,10 +12,10 @@ switch ($_GET['op']) {
         $datos = $producto -> get_producto();
         echo json_encode($datos);
         break;
-    case 'GetId':
+    /* case 'GetId':
         $datos = $producto->get_cliente_id($body['id']);
         echo json_encode($datos);
-        break;
+        break; */
     case 'insert':
         $datos = $producto->insert_producto(
             $body['nombre'], 

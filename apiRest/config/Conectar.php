@@ -2,7 +2,7 @@
 class Conectar{
     protected $db;
 
-    protected function conexion(){
+    protected function conexion(){ 
         try {
             $conectar = $this -> db = new PDO("mysql:local=localhost;dbname=alquilartemis", "campus", "campus2023"); //Lo primero es el DCN
             return $conectar;

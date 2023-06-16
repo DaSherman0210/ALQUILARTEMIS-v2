@@ -4,6 +4,6 @@
 
     $index = new TemplateController();
     
-    $index -> index();
+    $index -> index(); 
 
 ?>

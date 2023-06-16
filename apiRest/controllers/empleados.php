@@ -10,7 +10,7 @@ $body = json_decode(file_get_contents("php://input"), true);
 switch ($_GET['op']) {
     case 'GetAll':
         $datos = $empleado -> get_empleado();
-        echo json_encode($datos);
+        echo json_encode($datos); 
         break;
     case 'GetId':
         $datos = $camper->get_cliente_id($body['id']);

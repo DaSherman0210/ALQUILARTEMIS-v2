@@ -86,5 +86,5 @@ CREATE TABLE salida_detalle(
   valor_total FLOAT NOT NULL,
   FOREIGN KEY (id_salida) REFERENCES salida(id_salida),
   FOREIGN KEY (id_obra) REFERENCES obras(id_obra),
-  FOREIGN KEY (id_empleado) REFERENCES empleados(id_empleado)
+  FOREIGN KEY (id_empleado) REFERENCES empleados(id_empleado) 
 ); */

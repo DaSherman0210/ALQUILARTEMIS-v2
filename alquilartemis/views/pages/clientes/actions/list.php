@@ -4,7 +4,7 @@ $url = "http://localhost/SkylAb-128/ALQUILARTEMIS/apiRest/controllers/clientes.p
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-$output = json_decode(curl_exec($curl));
+$output = json_decode(curl_exec($curl)); 
 /* echo "<pre>";
 print_r($output);
 echo "</pre>"; */
