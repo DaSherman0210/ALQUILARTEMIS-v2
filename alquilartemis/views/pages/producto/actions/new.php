@@ -6,7 +6,7 @@ ini_set("display_startup_errors" , 1);
 error_reporting(E_ALL);
 
 if (isset($_POST['enviar'])) {
-    $url = "http://localhost/SkylAb-128/ALQUILARTEMIS/apiRest/controllers/productos.php?op=insert";
+    $url = "http://localhost/SkylAb-176/ALQUILARTEMIS-v2/apiRest/controllers/productos.php?op=insert";
 
     $data = array(
         'nombre' => $_POST['nombre'],

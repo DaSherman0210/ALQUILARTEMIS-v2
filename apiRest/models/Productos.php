@@ -18,62 +18,76 @@ class Productos extends Conectar{
         $this-> tipo_operacion = $tipo_operacion;
     }
  
-    //todo -- SETTERS
+    //todo ----------------id_producto----------------
+
     public function setId_producto($id_producto){
         $this -> id_producto = $id_producto;
     }
+    public function getId_producto(){
+        return $this-> id_producto;
+    }
+
+    //todo ----------------nombre----------------
 
     public function setNombre($nombre){
         $this -> nombre = $nombre;
     }
 
+    public function getnombre(){
+        return $this-> nombre;
+    }
+
+    //todo ----------------stock_inicial----------------
+
     public function setStock_inicial($stock_inicial){
         $this -> stock_inicial = $stock_inicial;
     }
+
+    public function getstock_inicial(){
+        return $this-> stock_inicial;
+    }
+
+    //todo ----------------cantidad_ingresos----------------
 
     public function setCantidad_ingresos($cantidad_ingresos){
         $this -> cantidad_ingresos = $cantidad_ingresos;
     }
 
+    public function getcantidad_ingresos(){
+        return $this-> cantidad_ingresos;
+    }
+
+    //todo ----------------cantidad_salidas----------------
+
     public function setCantidad_salidas($cantidad_salidas){
         $this -> cantidad_salidas = $cantidad_salidas;
     }
 
+    public function getcantidad_salidas(){
+        return $this-> cantidad_salidas;
+    }
+
+    //todo ----------------fecha_inventario----------------
 
     public function setFecha_inventario($fecha_inventario){
         $this -> fecha_inventario = $fecha_inventario;
     }
 
-    public function setTipo_operacion($tipo_operacion){
-        $this -> tipo_operacion = $tipo_operacion;
-    }
-
-    //todo -- GETTERS
-
-    public function getId_producto(){
-        return $this-> id_producto;
-    }
-    public function getnombre(){
-        return $this-> nombre;
-    }
-    public function getstock_inicial(){
-        return $this-> stock_inicial;
-    }
-    public function getcantidad_ingresos(){
-        return $this-> cantidad_ingresos;
-    }
-    public function getcantidad_salidas(){
-        return $this-> cantidad_salidas;
-    }
     public function getfecha_inventario(){
         return $this-> fecha_inventario;
     }
+
+    //todo ----------------tipo_operacion----------------
+
+    public function setTipo_operacion($tipo_operacion){
+        $this -> tipo_operacion = $tipo_operacion;
+    }
+    
     public function gettipo_operacion(){
         return $this-> tipo_operacion;
     }
 
-    //? Funciones especiales
-
+    //todo --------------FUNCIONES ESPECIALES--------------
 
     public function get_producto(){
         $conectar = parent::conexion();

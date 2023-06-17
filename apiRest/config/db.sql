@@ -1,9 +1,11 @@
-/* -- SQLBook: Code
+-- SQLBook: Code
 
 -- SQLBook: Code
 -- Active: 1685444645314@@127.0.0.1@3306@alquilartemis
 CREATE DATABASE alquilartemis;
-    DEFAULT CHARACTER SET = 'utf8mb4';
+  DEFAULT CHARACTER SET = 'utf8mb4';
+
+DROP DATABASE alquilartemis; 
 
 use alquilartemis;
 
@@ -87,4 +89,16 @@ CREATE TABLE salida_detalle(
   FOREIGN KEY (id_salida) REFERENCES salida(id_salida),
   FOREIGN KEY (id_obra) REFERENCES obras(id_obra),
   FOREIGN KEY (id_empleado) REFERENCES empleados(id_empleado) 
-); */
+);
+
+CREATE TABLE devoluciones(
+  id_devoluciones INTEGER PRIMARY KEY AUTO_INCREMENT,
+  id_cliente INT NOT NULL,
+  id_empleado INT NOT NULL,
+  objeto_devolver VARCHAR (50) NOT NULL,
+  cantidad_devuelta BIGINT NOT NULL,
+  dia_devolucion DATE NOT NULL,
+  hora_devolucion TIME NOT NULL,  
+  Foreign Key (id_cliente) REFERENCES clientes (id_cliente),
+  Foreign Key (id_empleado) REFERENCES empleados (id_empleado)
+);

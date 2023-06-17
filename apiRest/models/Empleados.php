@@ -13,6 +13,9 @@ class Empleados extends Conectar{
         $this->telefono = $telefono;
         $this->email = $email;
     }
+
+    //todo ----------------id_empleado----------------
+
     function setId_empleado($id_empleado){
         $this->id_empleado=$id_empleado;
     }
@@ -21,13 +24,17 @@ class Empleados extends Conectar{
         return $this->id_empleado;
     }
 
-    function setNombre($nombres){
+    //todo ----------------nombres----------------
+
+    function setNombres($nombres){
         $this->nombres = $nombres;
     }
 
     function getNombres(){
         return $this->nombres;
     }
+
+    //todo ----------------direccion----------------
 
     function setDireccion($direccion){
         $this->direccion = $direccion;
@@ -37,6 +44,8 @@ class Empleados extends Conectar{
         return $this->direccion;
     }
 
+    //todo ----------------telefono----------------
+
     function setTelefono($telefono){
         $this->telefono=$telefono;
     }
@@ -44,6 +53,9 @@ class Empleados extends Conectar{
     function getTelefono(){
         return $this->telefono;
     }
+
+    //todo ----------------email----------------
+
 
     function setEmail($email){
         $this->email=$email;
@@ -53,12 +65,26 @@ class Empleados extends Conectar{
         return $this->email;
     }
 
+    //todo --------------FUNCIONES ESPECIALES--------------
+
     public function get_empleado(){
         $conectar = parent::conexion();
         parent::set_name();
         $stm = $conectar->prepare("SELECT * FROM empleados");
         $stm -> execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function insert_empleado($nombres, $direccion , $telefono , $email){
+        $conectar = parent:: conexion();
+        parent::set_name();
+        $stm = $conectar -> prepare("INSERT INTO empleados (nombre , direccion , telefono , email) VALUES (?,?,?,?)");
+        $stm ->bindValue(1 , $nombres);
+        $stm ->bindValue(2 , $direccion);
+        $stm ->bindValue(3 , $telefono);
+        $stm ->bindValue(4 , $email);
+        $stm -> execute();
+        return $stm -> fetchAll(PDO::FETCH_ASSOC);
     }
 }
 

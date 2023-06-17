@@ -1,7 +1,7 @@
 <!-- /.card -->
 <?php
-$url = "http://localhost/SkylAb-176/ALQUILARTEMIS-v2/apiRest/controllers/empleados.php?op=GetAll";
-// Curl es como el fetch() en Javascript (para consumir APIs)
+$url = "http://localhost/SkylAb-176/ALQUILARTEMIS-v2/apiRest/controllers/facturas.php?op=GetAll";
+//! Curl es como el fetch() en Javascript (para consumir APIs)
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -9,7 +9,7 @@ $output = json_decode(curl_exec($curl));
 
 ?>
 
-<?php include ("new.php"); ?>
+<?php include "new.php"; ?>
 
 <div class="card">
               <div class="card-header">
@@ -21,10 +21,13 @@ $output = json_decode(curl_exec($curl));
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>NOMBRES</th>
-                    <th>UBICACIÓN</th>
-                    <th>TELEFONO</th>
-                    <th>EMAIL</th>
+                    <th>ID CLIENTE</th>
+                    <th>ID EMPLEADO</th>
+                    <th>FECHA SALIDA</th>
+                    <th>SUBTOTAL</th>
+                    <th>PLACA</th>
+                    <th>OBSERVACIONES</th>
+                    <th>DETALLE</th>
                     <th>BORRAR</th>
                     <th>EDITAR</th>
                   </tr>
@@ -35,13 +38,16 @@ $output = json_decode(curl_exec($curl));
             { 
           ?>
         <tr>
+        <td><?php echo $out -> id_salida; ?></td>
+        <td><?php echo $out -> id_cliente; ?></td>
         <td><?php echo $out -> id_empleado; ?></td>
-        <td><?php echo $out -> nombres; ?></td>
-        <td><?php echo $out -> direccion; ?></td>
-        <td><?php echo $out -> telefono; ?></td>
-        <td><?php echo $out -> email; ?></td>
-        <td><button type="button" class="btn btn-primary">UPDATE</button></td>
+        <td><?php echo $out -> fecha_salida; ?></td>
+        <td><?php echo $out -> subtotal_peso; ?></td>
+        <td><?php echo $out -> placa_transporte; ?></td>
+        <td><?php echo $out -> observaciones; ?></td>
+        <td><button type="button" class="btn btn-info">DETAIL</button></td>
         <td><button type="button" class="btn btn-danger">DELETE</button></td>
+        <td><button type="button" class="btn btn-warning">UPDATE</button></td>
         </tr>
         <?php 
           }
@@ -49,11 +55,14 @@ $output = json_decode(curl_exec($curl));
         </tbody>
                   <tfoot>
                   <tr>
-                    <th>ID</th>
-                    <th>NOMBRES</th>
-                    <th>UBICACIÓN</th>
-                    <th>TELEFONO</th>
-                    <th>EMAIL</th>
+                  <th>ID</th>
+                    <th>ID CLIENTE</th>
+                    <th>ID EMPLEADO</th>
+                    <th>FECHA SALIDA</th>
+                    <th>SUBTOTAL</th>
+                    <th>PLACA</th>
+                    <th>OBSERVACIONES</th>
+                    <th>DETALLE</th>
                     <th>BORRAR</th>
                     <th>EDITAR</th>
                   </tr>
