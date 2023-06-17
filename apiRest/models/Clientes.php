@@ -75,19 +75,19 @@ class Clientes extends Conectar{
         return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function get_cliente_id($id_cliente){
+    /* public function get_cliente_id($id_cliente){
         $conectar = parent::conexion();
         parent::set_name();
         $stm = $conectar->prepare("SELECT * FROM clientes WHERE id=?");
         $stm -> bindvalue(1,$id_cliente);
         $stm -> execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
-    }
+    } */
 
-    public function insert_cliente($nombre, $telefono, $ubicacion, $email){
+    public function insert_cliente($nombre, $ubicacion , $telefono, $email){
         $conectar=parent::Conexion();
         parent::set_name();
-        $stm="INSERT INTO clientes (nombre,telefono,ubicacion,email) VALUES(?,?,?,?)";
+        $stm="INSERT INTO clientes (nombre,ubicacion,telefono,email) VALUES(?,?,?,?)";
         $stm=$conectar->prepare($stm);
         $stm->bindValue(1,$nombre);
         $stm->bindValue(2,$ubicacion);

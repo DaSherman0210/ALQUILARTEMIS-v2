@@ -6,7 +6,7 @@ ini_set("display_startup_errors" , 1);
 error_reporting(E_ALL); 
 
 if (isset($_POST['enviar'])) {
-    $url = "http://localhost/SkylAb-176/ALQUILARTEMIS-v2/apiRest/controllers/devoluciones.php?op=insert";
+    $url = "http://localhost/SkylAb-119/ALQUILARTEMIS-v2/apiRest/controllers/devoluciones.php?op=insert";
 
     $data = array(
         'id_cliente' => $_POST['id_cliente'],
@@ -54,9 +54,10 @@ if (isset($_POST['enviar'])) {
                     <label for="id_cliente" class="col-sm-2 col-form-label col-16">Selecciona Cliente</label>
                     <select class="form-select" aria-label="Disabled select example" name="id_cliente" id="id_cliente">
                         <option selected>Selecciona Cliente</option>
-                        <?php foreach ($todo as $key => $valor) {?>
-                        <option value="<?php echo $valor['id_cliente']; ?>"><?php echo $valor['nombre']; ?></option>
-                        <?php } ?>
+                        <option value="1">cliente1</option>
+                        <option value="2">cliente2</option>
+                        <option value="3">cliente3</option>
+                        <option value="4">cliente4</option>
                     </select>
                     </div>
                     <div class="mb-4 row">

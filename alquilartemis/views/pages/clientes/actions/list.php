@@ -1,13 +1,13 @@
 <?php
-$url = "http://localhost/SkylAb-176/ALQUILARTEMIS-v2/apiRest/controllers/clientes.php?op=GetAll";
+$url = "http://localhost/SkylAb-119/ALQUILARTEMIS-v2/apiRest/controllers/clientes.php?op=GetAll";
 // Curl es como el fetch() en Javascript (para consumir APIs)
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 $output = json_decode(curl_exec($curl)); 
-/* echo "<pre>";
+/*  echo "<pre>";
 print_r($output);
-echo "</pre>"; */
+echo "</pre>";  */
 
 ?>
 
@@ -22,7 +22,7 @@ echo "</pre>"; */
           <th>NOMBRES</th>
           <th>ESPECIALIDAD</th>
           <th>TELEFONO</th>
-          <th>DIRECCION</th>
+          <th>Email</th>
           <th>BORRAR</th>
           <th>ACTUALIZAR</th>
         </tr>

@@ -6,7 +6,7 @@ ini_set("display_startup_errors" , 1);
 error_reporting(E_ALL);
 
 if (isset($_POST['enviar'])) {
-    $url = "http://localhost/SkylAb-176/ALQUILARTEMIS-v2/apiRest/controllers/empleados.php?op=insert";
+    $url = "http://localhost/SkylAb-119/ALQUILARTEMIS-v2/apiRest/controllers/empleados.php?op=insert";
 
     $data = array(
         'nombres' => $_POST['nombres'],

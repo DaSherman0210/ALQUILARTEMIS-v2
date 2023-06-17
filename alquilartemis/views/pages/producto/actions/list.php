@@ -1,5 +1,5 @@
 <?php
-$url = "http://localhost/SkylAb-176/ALQUILARTEMIS-v2/apiRest/controllers/productos.php?op=GetAll";
+$url = "http://localhost/SkylAb-119/ALQUILARTEMIS-v2/apiRest/controllers/productos.php?op=GetAll";
 // Curl es como el fetch() en Javascript (para consumir APIs)
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);

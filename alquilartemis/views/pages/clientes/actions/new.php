@@ -6,7 +6,7 @@ ini_set("display_startup_errors" , 1);
 error_reporting(E_ALL);
 
 if (isset($_POST['enviar'])) {
-    $url = "http://localhost/SkylAb-176/ALQUILARTEMIS-v2/apiRest/controllers/clientes.php?op=insert";
+    $url = "http://localhost/SkylAb-119/ALQUILARTEMIS-v2/apiRest/controllers/clientes.php?op=insert";
 
     $data = array(
         'nombre' => $_POST['nombre'],
@@ -26,6 +26,7 @@ if (isset($_POST['enviar'])) {
 
     echo "<pre>";
     print_r($response);
+    print_r($data);
     echo "</pre>";
 
     echo "<script>alert('Datos Guardados correctamente'); document.location='clientes'</script>";

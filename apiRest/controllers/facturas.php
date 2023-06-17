@@ -1,4 +1,4 @@
-<?php
+    <?php
 header('Content-Type: application/json');
 require_once("../config/Conectar.php");
 require_once("../models/Facturas.php");
