@@ -78,7 +78,7 @@ class Empleados extends Conectar{
     public function insert_empleado($nombres, $direccion , $telefono , $email){
         $conectar = parent:: conexion();
         parent::set_name();
-        $stm = $conectar -> prepare("INSERT INTO empleados (nombre , direccion , telefono , email) VALUES (?,?,?,?)");
+        $stm = $conectar -> prepare("INSERT INTO empleados (nombres , direccion , telefono , email) VALUES (?,?,?,?)");
         $stm ->bindValue(1 , $nombres);
         $stm ->bindValue(2 , $direccion);
         $stm ->bindValue(3 , $telefono);

@@ -1,4 +1,9 @@
 <?php
+ini_set("display_errors" , 1);
+ini_set("display_startup_errors" , 1);
+
+error_reporting(E_ALL); 
+
 header('Content-Type: application/json');
 require_once("../config/Conectar.php");
 require_once("../models/Devoluciones.php");
@@ -12,14 +17,20 @@ switch ($_GET['op']) {
         $datos = $empleado -> get_devolucion();
         echo json_encode($datos); 
         break;
-    case 'GetId':
-        $datos = $camper->get_id_devoluciones($body['id']);
+    /* case 'GetId':
+        $datos = $empleado->get_id_devoluciones($body['id']);
         echo json_encode($datos);
-        break;
-    /* case 'insert':
-        $datos = $camper->insert_cliente($body['nombre'], $body['telefono'], $body['correo'], $body['documento'], $body['tipo_documento'], $body['tipo_cliente']);
-        echo json_encode("Insertado correctamente");
         break; */
+    case 'insert':
+        $datos = $empleado->insert_devolucion(
+            $body['id_cliente'], 
+            $body['id_empleado'], 
+            $body['objeto_devolver'], 
+            $body['cantidad_devuelta'], 
+            $body['dia_devolucion'], 
+            $body['hora_devolucion']);
+        echo json_encode("Insertado correctamente");
+        break;
     default:
         echo "No entra";
         break;

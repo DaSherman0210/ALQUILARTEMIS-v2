@@ -110,7 +110,21 @@ class Salida extends Conectar {
         $stm -> execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
-
+    
+    public function insert_salida($id_cliente, $fecha_salida , $hora_salida , $subtotal_peso , $placa_transporte , $observaciones , $id_empleado ){
+        $conectar = parent:: conexion();
+        parent::set_name();
+        $stm = $conectar -> prepare("INSERT INTO salida (id_cliente , fecha_salida , hora_salida , subtotal_peso , placa_transporte , observaciones , id_empleado) VALUES (?,?,?,?,?,?,?)");
+        $stm ->bindValue(1 , $id_cliente);
+        $stm ->bindValue(2 , $fecha_salida);
+        $stm ->bindValue(3 , $hora_salida);
+        $stm ->bindValue(4 , $subtotal_peso);
+        $stm ->bindValue(5 , $placa_transporte);
+        $stm ->bindValue(6 , $observaciones);
+        $stm ->bindValue(7 , $id_empleado);
+        $stm -> execute();
+        return $stm -> fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 
 ?>
