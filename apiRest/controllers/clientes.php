@@ -30,3 +30,8 @@ switch ($_GET['op']) {
 }
 
 ?>
+
+<!-- case 'GetId':
+        $datos = $producto->getId_producto($body['id_producto']);
+        echo json_encode($datos);
+        break; -->

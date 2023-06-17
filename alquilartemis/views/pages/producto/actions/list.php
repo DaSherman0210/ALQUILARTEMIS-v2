@@ -44,8 +44,8 @@ echo "</pre>"; */
         <td><?php echo $out -> cantidad_salidas; ?></td>
         <td><?php echo $out -> fecha_inventario; ?></td>
         <td><?php echo $out -> tipo_operacion; ?></td>
-        <td><button type="button" class="btn btn-primary">UPDATE</button></td>
-        <td><button type="button" class="btn btn-danger">DELETE</button></td>
+        <td><button type="button" class="btn btn-warning">Update</button></td>
+        <td><a class ="btn btn-danger" href="delete?id_producto=<?= $out ->id_producto ?>&req=delete ">Borrar</a></td>
         </tr>
         <?php 
           }

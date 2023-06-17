@@ -112,6 +112,16 @@
         $stm -> execute();
         return $stm -> fetchAll(PDO::FETCH_ASSOC);
     }
+
+    //?-- SELECT POR LLAVES FORANEAS
+
+    public function get_cliente(){
+        $conectar = parent:: conexion();
+        parent::set_name();
+        $stm = $conectar-> prepare("SELECT id_cliente , nombre FROM clientes"); 
+        $stm -> execute();
+        return $stm -> fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 
 ?>

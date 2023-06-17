@@ -12,10 +12,17 @@ switch ($_GET['op']) {
         $datos = $producto -> get_producto();
         echo json_encode($datos);
         break;
-    /* case 'GetId':
-        $datos = $producto->get_cliente_id($body['id']);
-        echo json_encode($datos);
-        break; */
+    
+    case 'delete':
+        $id = $_GET['id']; // Obtener el identificador de la fila a eliminar
+        $resultado = $producto->delete_producto($id); // Llamar a la función de eliminación
+        if ($resultado) {
+            echo json_encode("Producto eliminado correctamente");
+        } else {
+            echo json_encode("Error al eliminar el producto");
+        }
+        break;
+
     case 'insert':
         $datos = $producto->insert_producto(
             $body['nombre'], 
