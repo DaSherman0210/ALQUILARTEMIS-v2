@@ -111,13 +111,13 @@ class Productos extends Conectar{
         return $stm -> fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function delete_producto(){
+    /* public function delete_producto(){
         $conectar = parent:: conexion();
         parent::set_name();
         $stm = $conectar -> prepare("DELETE FROM productos WHERE id_producto ?");
         $stm -> execute ([$this->id_producto]);
         return $stm -> fetchAll();
-    }
+    } */
 
 }
 
